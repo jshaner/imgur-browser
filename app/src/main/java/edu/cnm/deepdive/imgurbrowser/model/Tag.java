@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class Tag {
 
-
   @Expose
   private String name;
 
@@ -40,3 +39,4 @@ public class Tag {
     this.description = description;
   }
 }
+

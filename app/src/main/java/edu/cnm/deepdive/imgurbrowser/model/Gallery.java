@@ -2,8 +2,6 @@ package edu.cnm.deepdive.imgurbrowser.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import edu.cnm.deepdive.imgurbrowser.model.Image;
-import edu.cnm.deepdive.imgurbrowser.model.Tag;
 import java.util.Arrays;
 
 public class Gallery {
@@ -77,11 +75,16 @@ public class Gallery {
   }
 
   public Image[] getImages() {
-    return images;
+    return (images != null) ? images : new Image[0];
   }
 
   public void setImages(Image[] images) {
     this.images = images;
+  }
+
+  @Override
+  public String toString() {
+    return title + description + Arrays.toString(images);
   }
 
   public static class Search {
@@ -100,7 +103,7 @@ public class Gallery {
     @Override
     public String toString() {
       return "SearchResult{" +
-          "data" + Arrays.toString(getData());
+          "data=" + Arrays.toString(getData());
     }
   }
 
