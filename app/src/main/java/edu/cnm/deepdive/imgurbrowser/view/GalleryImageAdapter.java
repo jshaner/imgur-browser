@@ -12,13 +12,13 @@ import androidx.annotation.Nullable;
 import com.squareup.picasso.Picasso;
 import edu.cnm.deepdive.imgurbrowser.R;
 import edu.cnm.deepdive.imgurbrowser.model.Image;
-import org.w3c.dom.Text;
+import java.util.List;
 
 public class GalleryImageAdapter extends ArrayAdapter<Image> {
 
   public GalleryImageAdapter(@NonNull Context context,
-      Image[] imageItemArray)  {
-    super(context, 0, imageItemArray);
+      List<Image> imageList) {
+    super(context, 0, imageList);
   }
 
   @NonNull
@@ -33,7 +33,8 @@ public class GalleryImageAdapter extends ArrayAdapter<Image> {
   }
 
   private View initView(int position, View convertView, ViewGroup parent) {
-    if(convertView == null) {
+
+    if (convertView == null) {
       convertView = LayoutInflater.from(getContext()).inflate(
           R.layout.custom_gallery_search_spinner_item, parent, false
       );
@@ -50,9 +51,9 @@ public class GalleryImageAdapter extends ArrayAdapter<Image> {
       title.setText(currentItem.getTitle());
       description.setText(currentItem.getDescription());
       url.setText(currentItem.getUrl());
-
     }
 
     return convertView;
   }
 }
+
