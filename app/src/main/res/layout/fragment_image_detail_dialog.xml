@@ -34,6 +34,7 @@
       app:layout_constraintTop_toBottomOf="@id/image_title"
       app:layout_constraintBottom_toTopOf="@id/image_description"
       android:layout_margin="@dimen/half_margin"
+      android:src="@drawable/car"
       />
 
     <TextView
